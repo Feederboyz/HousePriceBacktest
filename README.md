@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 比實價登錄更好用的房屋查詢工具
 
-## Getting Started
+本專案致力於提供更直覺、豐富、即時的房屋交易資訊查詢體驗
 
-First, run the development server:
+## 功能特色
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **搜尋**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    - 可依地區、價格範圍、建物坪數等條件，搜尋房屋交易記錄。
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2. **[開發中] 歷史房價**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    - 提供房價走勢圖表，顯示特定條件下的歷年房價漲跌情形。
+    - 讓使用者快速掌握市場趨勢。
 
-## Learn More
+3. **[開發中] 回測**
+    - **可加入房屋與其他投資標的（如股票、ETF）組成個人投資組合，進行模擬與績效比較。**
+    - 模擬不同時期買入、持有、賣出的實際獲利或虧損。
 
-To learn more about Next.js, take a look at the following resources:
+## 技術架構
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    -   Python
+    -   Pandas（用於資料整理與分析）
+    -   Node.js
+    -   PostgreSQL）
+    -   React.js
+    -   Next.js
