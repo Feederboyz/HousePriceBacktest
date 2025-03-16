@@ -14,7 +14,7 @@ export async function GET(request) {
             const maxTransactionDate = moment().year(year).month(maxMonth).date(1).startOf("day");
             const minTransactionDate = moment().year(year).month(minMonth).date(1).startOf("day");
 
-            let query = `SELECT AVG(total_price) AS avg, COUNT(*) AS count FROM second_hand`;
+            let query = `SELECT AVG(total_price) AS avg, COUNT(*) AS count FROM rent`;
             if (conditions.length > 0) {
                 query += " WHERE " + conditions.join(" AND ");
             }
@@ -26,7 +26,7 @@ export async function GET(request) {
                     throw new Error("The length of query results /history is not 1");
                 }
                 const date = `${year}s${season}`;
-                const price = (res.rows[0].avg / 10000).toFixed(0);
+                const price = (res.rows[0].avg / 10000).toFixed(2);
                 const count = res.rows[0].count;
                 historyPrices.push({ date, price, count });
             } catch (dbError) {

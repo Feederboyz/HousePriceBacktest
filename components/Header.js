@@ -10,6 +10,7 @@ export default function Header() {
 
                 <NavBtn href="/">Search</NavBtn>
                 <NavBtn href="/history">History</NavBtn>
+                <NavBtn href="/rent-history">Rent</NavBtn>
             </div>
         </nav>
     );

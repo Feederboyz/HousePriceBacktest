@@ -1,5 +1,5 @@
 "use client";
-import HistorySearchCondition from "@/components/HistorySearchCondition";
+import RentHistorySearchCondition from "@/components/RentHistorySearchCondition";
 import dynamic from "next/dynamic";
 const HistoryChart = dynamic(() => import("@/components/HistoryChart"), {
     ssr: false,
@@ -8,7 +8,7 @@ const HistoryChart = dynamic(() => import("@/components/HistoryChart"), {
 export default function Home() {
     return (
         <div className="relative">
-            <HistorySearchCondition />
+            <RentHistorySearchCondition />
             <HistoryChart />
         </div>
     );

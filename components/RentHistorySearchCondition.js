@@ -7,7 +7,7 @@ import { useState } from "react";
 import HoverDropdown from "@/components/HoverDropdown";
 import BaseConditionForm from "@/components/BaseConditionForm";
 
-export default function HistorySearchCondition() {
+export default function RentHistorySearchCondition() {
     const [city, setCity] = useState("臺北市");
     const [district, setDistrict] = useState("請選擇區域");
     const queryResultsDispatch = useQueryResultsDispatch();
@@ -16,14 +16,14 @@ export default function HistorySearchCondition() {
     const successHandler = (queryResult) => {
         let data = queryResult.map((item) => ({
             ...item,
-            price: parseInt(item.price, 10),
+            price: parseFloat(item.price, 10),
             count: parseInt(item.count, 10),
         }));
         queryResultsDispatch({ type: "newHistoryPrices", data: data });
     };
 
     return (
-        <BaseConditionForm endpoint="/api/history/" onSuccess={successHandler}>
+        <BaseConditionForm endpoint="/api/rent-history/" onSuccess={successHandler}>
             <HoverDropdown title={city}>
                 {Object.keys(cityAndDistrict).map((cityName) => (
                     <LabeledInput
@@ -74,8 +74,6 @@ export default function HistorySearchCondition() {
                 <LabeledInput label="最大屋齡" type="number" name="maxHouseAge" />
             </HoverDropdown>
             <HoverDropdown>
-                <LabeledInput label="最小室內坪數" type="number" name="minHouseArea" />
-                <LabeledInput label="最大室內坪數" type="number" name="maxHouseArea" />
                 <LabeledInput label="最小總坪數" type="number" name="minTotalArea" />
                 <LabeledInput label="最大總坪數" type="number" name="maxTotalArea" />
             </HoverDropdown>
